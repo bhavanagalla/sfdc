@@ -1,0 +1,47 @@
+<apex:page controller="newOpportunityController"
+           tabStyle="Opportunity">
+  <apex:sectionHeader title="New Customer Opportunity"
+                      subtitle="Step 3 of 3"/>
+  <apex:form >
+    <apex:pageBlock title="Confirmation">
+      <apex:facet name="footer">
+        <apex:outputPanel >
+          <apex:commandButton action="{!step2}" value="Previous"
+                              styleClass="btn"/>
+          <apex:commandButton action="{!save}" value="Save"
+                              styleClass="btn"/>
+        </apex:outputPanel>
+      </apex:facet>
+      <apex:pageBlockSection title="Account Information">
+        <apex:panelGrid columns="2">
+          <apex:outputText value="Account Name"/>
+          <apex:outputText value="{!account.name}"/>
+          <apex:outputText value="Account Site"/>
+          <apex:outputText value="{!account.site}"/>
+        </apex:panelGrid>
+      </apex:pageBlockSection>
+      <apex:pageBlockSection title="Contact Information">
+        <apex:panelGrid columns="2">
+          <apex:outputText value="First Name"/>
+          <apex:outputText value="{!contact.firstName}"/>
+          <apex:outputText value="Last Name"/>
+          <apex:outputText value="{!contact.lastName}"/>
+          <apex:outputText value="Phone"/>
+          <apex:outputText value="{!contact.phone}"/>
+          <apex:outputText value="Role"/>
+          <apex:outputText value="{!role.role}"/>
+        </apex:panelGrid>
+      </apex:pageBlockSection>
+      <apex:pageBlockSection title="Opportunity Information">
+        <apex:panelGrid columns="2">
+          <apex:outputText value="Opportunity Name"/>
+          <apex:outputText value="{!opportunity.name}"/>
+          <apex:outputText value="Amount"/>
+          <apex:outputText value="{!opportunity.amount}"/>
+          <apex:outputText value="Close Date"/>
+          <apex:outputText value="{!opportunity.closeDate}"/>
+        </apex:panelGrid>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+  </apex:form>
+  </apex:page>

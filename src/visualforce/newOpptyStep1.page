@@ -1,0 +1,37 @@
+<apex:page controller="newOpportunityController"
+           tabStyle="Opportunity">
+  <apex:sectionHeader title="New Customer Opportunity"
+                      subtitle="Step 1 of 3"/>
+  <apex:form >
+    <apex:pageBlock title="Customer Information"> 
+      <apex:facet name="footer">
+        <apex:commandButton action="{!step2}" value="Next"
+                            styleClass="btn"/>
+      </apex:facet>
+      <apex:pageBlockSection title="Account Information">
+    
+       <apex:panelGrid columns="2">
+        <apex:outputLabel value="Account Name" for="accountName"/>
+        <apex:inputField id="accountName" value="{!account.name}"/>
+        <apex:outputLabel value="Account Site" for="accountSite"/>
+        <apex:inputField id="accountSite" value="{!account.site}"/>
+       </apex:panelGrid>
+      </apex:pageBlockSection>
+      <apex:pageBlockSection title="Contact Information">
+       <apex:panelGrid columns="2">
+         <apex:outputLabel value="First Name" 
+                           for="contactFirstName"/>
+         <apex:inputField id="contactFirstName"
+                          value="{!contact.firstName}"/>
+         <apex:outputLabel value="Last Name" for="contactLastName"/>
+         <apex:inputField id="contactLastName"
+                          value="{!contact.lastName}"/>
+         <apex:outputLabel value="Phone" for="contactPhone"/>
+         <apex:inputField id="contactPhone"
+                          value="{!contact.phone}"/>
+       </apex:panelGrid>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>
+              
